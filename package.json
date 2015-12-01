@@ -1,0 +1,21 @@
+{
+	"name": "SAPsv Menu",
+	"version": "1.0.0",
+	"description": "Show the daily menu for SAP's Palo Alto location",
+	"keywords": [
+		"NativeScript"
+	],
+	"author": "Stefan Selent",
+	"nativescript": {
+		"id": "org.nativescript.sappaloaltomenu",
+		"tns-android": {
+			"version": "1.4.0"
+		},
+		"tns-ios": {
+			"version": "1.4.0"
+		}
+	},
+	"dependencies": {
+		"tns-core-modules": "1.4"
+	}
+}

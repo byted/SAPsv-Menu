@@ -1,0 +1,69 @@
+<Page loaded="loaded">
+    <TabView>
+        <TabView.items>
+            <TabViewItem title="Cafe 1">
+                <TabViewItem.view>
+                    <ScrollView>
+                        <Repeater items="{{ cafe1 }}">
+                            <Repeater.itemTemplate>
+                                <StackLayout orientation="vertical">
+                                    <Label cssClass="category-heading" text="{{ category }}" />
+                                    <Repeater items="{{ menuItems }}">
+                                        <Repeater.itemTemplate>
+                                            <StackLayout orientation="vertical">
+                                                <Label cssClass="menuItem-lbl" text="{{ label }}" />
+                                                <Label cssClass="menuItem-description" text="{{ description }}" />
+                                            </StackLayout>
+                                        </Repeater.itemTemplate>
+                                    </Repeater>
+                                </StackLayout>
+                            </Repeater.itemTemplate>
+                        </Repeater>
+                    </ScrollView>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Cafe 3">
+                <TabViewItem.view>
+                    <ScrollView>
+                        <Repeater items="{{ cafe3 }}">
+                            <Repeater.itemTemplate>
+                                <StackLayout orientation="vertical">
+                                    <Label cssClass="category-heading" text="{{ category }}" />
+                                    <Repeater items="{{ menuItems }}">
+                                        <Repeater.itemTemplate>
+                                            <StackLayout orientation="vertical">
+                                                <Label cssClass="menuItem-lbl" text="{{ label }}" />
+                                                <Label cssClass="menuItem-description" text="{{ description }}" />
+                                            </StackLayout>
+                                        </Repeater.itemTemplate>
+                                    </Repeater>
+                                </StackLayout>
+                            </Repeater.itemTemplate>
+                        </Repeater>
+                    </ScrollView>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Cafe 8">
+                <TabViewItem.view>
+                    <ScrollView>
+                        <Repeater items="{{ cafe8 }}">
+                            <Repeater.itemTemplate>
+                                <StackLayout orientation="vertical">
+                                    <Label cssClass="category-heading" text="{{ category }}" />
+                                    <Repeater items="{{ menuItems }}">
+                                        <Repeater.itemTemplate>
+                                            <StackLayout orientation="vertical">
+                                                <Label cssClass="menuItem-lbl" text="{{ label }}" />
+                                                <Label cssClass="menuItem-description" text="{{ description }}" />
+                                            </StackLayout>
+                                        </Repeater.itemTemplate>
+                                    </Repeater>
+                                </StackLayout>
+                            </Repeater.itemTemplate>
+                        </Repeater>
+                    </ScrollView>
+                </TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
+</Page>

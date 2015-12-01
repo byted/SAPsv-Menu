@@ -1,0 +1,22 @@
+@import { url('~/platform.css') };
+
+Page {
+    background-color: white;
+    font-size: 16;
+}
+.category-heading {
+    padding: 0 10;
+    font-size: 20;
+    font-weight: bold;
+    margin-top: 10;
+}
+.menuItem-lbl {
+    padding: 0 15;
+    margin-top: 5;
+    font-size: 16;
+    color: black;
+}
+.menuItem-description {
+    font-size: 12;
+    padding: 0 15;
+}
