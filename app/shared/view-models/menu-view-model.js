@@ -5,10 +5,13 @@ var observableArrayModule = require("data/observable-array")
 
 function Menu() {
     var model = new observableModule.Observable({
-        cafe1: new observableArrayModule.ObservableArray([]),
-        cafe3: new observableArrayModule.ObservableArray([]),
-        cafe8: new observableArrayModule.ObservableArray([])
-    });
+        "cafe1": new observableArrayModule.ObservableArray([]),
+        "cafe3": new observableArrayModule.ObservableArray([]),
+        "cafe8": new observableArrayModule.ObservableArray([]),
+    })
+
+    model.getMenuItem = function(index) {
+    }
 
 
     model.getToday = function () {
@@ -21,29 +24,18 @@ function Menu() {
             // config.menu = data.content
             var cafes = data.content[0]
             console.log(JSON.stringify(cafes))
-            cafes[0].categories.forEach(function(category) {
-                var menuItems = new observableArrayModule.ObservableArray(category.menuItems) 
-                model.get('cafe1').push({
-                    category: category.label,
-                    menuItems: menuItems
-                })
-            })
-            cafes[1].categories.forEach(function(category) {
-                var menuItems = new observableArrayModule.ObservableArray(category.menuItems) 
-                model.get('cafe3').push({
-                    category: category.label,
-                    menuItems: menuItems
-                })
-            })
-            cafes[2].categories.forEach(function(category) {
-                var menuItems = new observableArrayModule.ObservableArray(category.menuItems) 
-                model.get('cafe8').push({
-                    category: category.label,
-                    menuItems: menuItems
+
+            cafes.forEach(function(cafe) {
+                var menuItems = new observableArrayModule.ObservableArray([])
+                cafe.categories.forEach(function(category) {
+                    category.menuItems.forEach(function(item) {
+                        model.get("cafe" + cafe.cafeId).push(item)
+                    })
                 })
             })
         })
     }
+
     return model
 }
 

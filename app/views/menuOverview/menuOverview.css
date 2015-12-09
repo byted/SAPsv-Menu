@@ -11,12 +11,12 @@ Page {
     margin-top: 10;
 }
 .menuItem-lbl {
-    padding: 0 15;
+    padding: 0 10;
     margin-top: 5;
-    font-size: 16;
+    font-size: 20;
     color: black;
 }
-.menuItem-description {
+.menuItem-desc {
     font-size: 12;
-    padding: 0 15;
+    padding-left: 15;
 }

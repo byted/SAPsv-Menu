@@ -1,11 +1,35 @@
 var Menu = require("../../shared/view-models/menu-view-model")
-var viewModule = require("ui/core/view")
-var dialogsModule = require("ui/dialogs")
+var frames = require("ui/frame")
+var Observable = require("data/observable").Observable;
+var dialogsModule = require("ui/dialogs");
 
-var menu = new Menu();
+var menuList = new Menu()
+var pageData = new Observable({
+    isLoading: true,
+    menu: menuList
+})
+
 
 exports.loaded = function(args) {
     var page = args.object
-    page.bindingContext = menu
-    menu.getToday()
+    page.bindingContext = pageData
+    menuList.getToday()
+        .catch(function(err) {
+            console.log(error);
+            dialogsModule.alert({
+                message: "An error occurred while loading the menu.",
+                okButtonText: "Hmkay..."
+            })
+        })
+        .then(function() {
+            pageData.set("isLoading", false)
+        })
+}
+
+exports.showDetails = function(args) {
+    var item = args.view.bindingContext;
+    frames.topmost().navigate({
+        moduleName: "views/menuDetails/menuDetails",
+        context: item
+    })
 }
